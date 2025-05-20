@@ -9,7 +9,7 @@ interface KeyValueFormProps {
   onSuccess?: (key: string, value: string) => void;
 }
 
-const API_BASE_URL = "http://52.77.248.194:7171";
+const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || "http://localhost:7171";
 
 const KeyValueForm = ({ onSuccess }: KeyValueFormProps) => {
   const [key, setKey] = useState("");
