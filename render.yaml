@@ -10,7 +10,3 @@ services:
         generateValue: true
     healthCheckPath: /
     autoDeploy: true
-    disk:
-      name: data
-      mountPath: /data
-      sizeGB: 1
