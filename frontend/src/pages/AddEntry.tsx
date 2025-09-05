@@ -7,8 +7,7 @@ import { Plus, Database } from "lucide-react";
 import Header from "@/components/Header";
 import { Link } from "react-router-dom";
 import ResultDisplay from "@/components/ResultDisplay";
-
-const API_BASE_URL = "http://52.77.248.194:7171";
+import { API_CONFIG } from "@/config/api";
 
 const AddEntry = () => {
   const [key, setKey] = useState("");
@@ -36,8 +35,8 @@ const AddEntry = () => {
     
     try {
       setIsLoading(true);
-      // Example API call - would be replaced with actual endpoint
-      const response = await fetch(`${API_BASE_URL}/put`, {
+      // API call to backend service
+      const response = await fetch(`${API_CONFIG.BASE_URL}/put`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

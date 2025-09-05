@@ -4,12 +4,11 @@ import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { toast } from "sonner";
 import { Plus } from "lucide-react";
+import { API_CONFIG } from "@/config/api";
 
 interface KeyValueFormProps {
   onSuccess?: (key: string, value: string) => void;
 }
-
-const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || "http://localhost:7171";
 
 const KeyValueForm = ({ onSuccess }: KeyValueFormProps) => {
   const [key, setKey] = useState("");
@@ -31,8 +30,8 @@ const KeyValueForm = ({ onSuccess }: KeyValueFormProps) => {
     
     try {
       setIsLoading(true);
-      // Example API call - would be replaced with actual endpoint
-      const response = await fetch(`${API_BASE_URL}/put`, {
+      // API call to backend service
+      const response = await fetch(`${API_CONFIG.BASE_URL}/put`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
