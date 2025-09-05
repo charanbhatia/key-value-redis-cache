@@ -51,6 +51,8 @@ func NewServer(cache *cache.Cache) *Server {
 
 // setupRoutes sets up the HTTP routes
 func (s *Server) setupRoutes() {
+	s.router.GET("/", s.handler.HealthHandler)      // Health check endpoint
+	s.router.GET("/health", s.handler.HealthHandler) // Alternative health check endpoint
 	s.router.POST("/put", s.handler.PutHandler)
 	s.router.GET("/get", s.handler.GetHandler)
 }

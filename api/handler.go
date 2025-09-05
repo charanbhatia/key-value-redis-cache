@@ -81,3 +81,11 @@ func (h *Handler) GetHandler(c *gin.Context) {
 		})
 	}
 }
+
+// HealthHandler handles health check requests
+func (h *Handler) HealthHandler(c *gin.Context) {
+	c.JSON(http.StatusOK, Response{
+		Status:  "OK",
+		Message: "Key-Value Cache service is running",
+	})
+}

@@ -5,7 +5,7 @@ FROM golang:1.23 AS build
 WORKDIR /app
 
 # Copy go.mod and go.sum files
-COPY go.mod ./
+COPY go.mod go.sum ./
 
 # Download dependencies
 RUN go mod download
@@ -28,7 +28,7 @@ WORKDIR /app
 # Copy the binary from the build stage
 COPY --from=build /app/key-value-cache .
 
-# Expose port 7171
+# Expose port (Render will override this with PORT env var)
 EXPOSE 7171
 
 # Run the application
