@@ -116,16 +116,7 @@ curl -X POST http://localhost:7171/put \
 curl http://localhost:7171/get?key=test-key
 ```
 
-## Deployment on AWS
-
-The service is designed to run on an AWS t3.small instance (2 vCPU, 2 GB RAM):
-
-1. Launch an EC2 t3.small instance with Amazon Linux 2023
-2. Install Docker on the instance
-3. Pull and run the Docker image
-4. Configure security groups to allow traffic on port 7171
-
-For detailed deployment instructions, see the [deployment guide](deployment.md).
+## Vercel live link: https://key-value-redis-cache-1i57.vercel.app/home
 
 ## Performance Considerations
 
